@@ -1,0 +1,67 @@
+#navbar-top a {
+    color: white;
+}
+
+div #profile {
+    color: black;
+}
+
+#navbar-top {
+    margin: 0px;
+    background: #1b1b1b;
+    display: inline-flex;
+    width: 100%;
+}
+
+#navbar-bottom p{
+    display: inline-flex;
+    color: white;
+}
+
+.gerenciar-produto{
+    margin-top: 15px;
+    text-align: end;
+    margin-bottom: 2px;
+}
+
+#campo-de-pesquisa input, button {
+    padding: 4px;
+    border: 0.5px solid black;
+    border-radius: 3px;
+    background: white;
+}
+
+#acoes {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+/* Painel de Controle */
+
+.painel-top {
+    margin-top: 15px;
+}
+
+.painel-top h2 {
+    margin-bottom: 1px;
+}
+
+.painel-top p {
+    margin-top: 1px;
+}
+
+.painel-top button {
+    border: none;
+}
+
+.form-group input {
+    width: 60%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.form-group .display-flex {
+    display: flex;
+}
+
