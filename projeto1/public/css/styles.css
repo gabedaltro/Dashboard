@@ -69,6 +69,7 @@ a:focus {
     background: #1f1f1f;
     color: #fff;
     transition: all 0.3s;
+    height: 100%;
 }
 
 #sidebar.active {
@@ -78,6 +79,10 @@ a:focus {
 #sidebar .sidebar-header {
     padding: 20px;
     background: #1f1f1f;
+}
+
+ul.list-unstyled.components {
+    height: 100%;
 }
 
 #sidebar ul.components {

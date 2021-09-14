@@ -8,6 +8,7 @@ use App\Http\Controllers\ProdutoController;
 
 use App\Http\Controllers\RelatorioController;
 
+Route::get('/logout', [PainelController::class, 'logout'])->middleware('auth');
 
 Route::get('/', [ProdutoController::class, 'index'])->middleware('auth');
 
@@ -26,6 +27,8 @@ Route::put('/painel-de-controle/update/{id}', [PainelController::class, 'update'
 Route::get('/relatorios/comercial/clientes', [RelatorioController::class, 'clientes'])->middleware('auth');
 
 Route::get('/relatorios/comercial/produtos', [RelatorioController::class, 'produtos'])->middleware('auth');
+
+Route::get('/action', [PainelController::class, 'action']);
 
 
 Route::fallback(function () {

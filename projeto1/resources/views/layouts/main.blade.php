@@ -6,6 +6,7 @@
 
         <title>@yield('title')</title>
 
+        <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
         <!-- Fonte do Google -->
 
         <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
