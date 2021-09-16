@@ -3,7 +3,12 @@
 }
 
 div #profile {
-    color: black;
+    color: white;
+}
+
+div #profile:hover {
+    background: #292929;
+    border-radius: 5px;
 }
 
 #navbar-top {
@@ -11,6 +16,7 @@ div #profile {
     background: #1b1b1b;
     display: inline-flex;
     width: 100%;
+    height: 60px;
     height: 10%;
 }
 

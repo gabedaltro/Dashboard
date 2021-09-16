@@ -33,20 +33,15 @@
                         <p class="msg">{{ session('msg') }}</p>
                     @endif  
                 </div>
-                <li class="nav-item dropdown">
-                    <a class="dropdown" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }} <i class="fas fa-chevron-down"></i></a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">      
-                        <form action="/logout" method="POST">
-                            @csrf
-                            <a id="profile" class="dropdown-item" href="/logout"
-                                class="nav-link" 
-                                onclick="event.preventDefault();
-                                this.closest('form').submit();">
-                                Sair
-                            </a>
-                        </form>
-                    </div>
-                </li>      
+                    <form action="/logout" method="POST">
+                        @csrf
+                        <a id="profile" class="dropdown-item" href="/logout"
+                            class="nav-link" 
+                            onclick="event.preventDefault();
+                            this.closest('form').submit();">
+                            <i class="fas fa-power-off"></i>
+                        </a>
+                    </form>
             </div>
 
         </nav>

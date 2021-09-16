@@ -28,15 +28,33 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
-        $products = new Product;
+        $product = new Product;
 
-        $products->name = $request->name;
-        $products->category = $request->category;
-        $products->stock = $request->stock;
+        $data = $request->json()->all();
 
-        $products->save();
-        
-        return redirect('/api/products');
-        return response($products);
+        /*
+        $product->name = $request->name;
+        $product->category = $request->category;
+        $product->stock = $request->stock;
+        */
+
+        $product->fill($data);
+
+        $product->save();
+
+        return response($product, 201);
+    }
+
+    public function update($id, Request $request)
+    {
+        $data = $request->json()->all();
+
+        $product = Product::find($id);
+
+        $product->fill($data);
+
+        $product->update();
+
+        return response($product);
     }
 }
