@@ -15,4 +15,13 @@ class Product extends Model
         'name'
     ];
 
+    protected $hidden = ['created_at', 'updated_at'];
+
+    protected $with = ['categoria'];
+
+    public function categoria()
+    {
+        return $this->belongsTo(Category::class, 'category_id');
+    }
+
 }

@@ -31,9 +31,9 @@ Route::get('/relatorios/comercial/produtos', [RelatorioController::class, 'produ
 Route::get('/action', [PainelController::class, 'action']);
 
 
-Route::fallback(function () {
+/* Route::fallback(function () {
     return view('painel.error');
-});
+}); */
 
 
 

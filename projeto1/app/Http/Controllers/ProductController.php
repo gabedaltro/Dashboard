@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    
+    public function __construct()
+    {
+        // $this->middleware('jwt.auth', ['only' => 'destroy']);
+    }
+
     public function index() 
     {
         $products = Product::all();
@@ -16,15 +22,13 @@ class ProductController extends Controller
 
     public function show($id)
     {
-        $products = Product::findOrFail($id);
+        $product = Product::findOrFail($id);
 
-        return response($products);
+        $product->categoria;
+
+        return response($product);
     }
 
-    public function create()
-    {
-        return view('product.create');
-    }
 
     public function store(Request $request)
     {
@@ -51,10 +55,31 @@ class ProductController extends Controller
 
         $product = Product::find($id);
 
+        if (!$product) {
+            return response([
+                'error' => 'Produto não encontrado'
+            ] ,404);
+        }
+
         $product->fill($data);
 
         $product->update();
 
         return response($product);
+    }
+
+    public function destroy($id)
+    {
+        $product = Product::find($id);
+
+        if (!$product) 
+            return response([
+                'error' => 'Produto não encontrado'
+            ], 404);
+        
+
+        $product->delete();
+
+        return response('');
     }
 }
